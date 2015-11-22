@@ -16,8 +16,7 @@ def make_json_from_xml(lang, vid_id, und_is_en, GB_is_en):
     soup = BeautifulSoup(xml, 'xml')
     fin_txt = FUCKXML([i for i in soup.children][0])
     
-    with open('./' + lang + '.json', 'w') as f:
-        f.write(json.dumps(fin_txt))
+    return {'json':json.dumps(fin_txt), 'lang':lang}
 
 def FUCKXML(soup):
     out = []
